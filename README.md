@@ -7,11 +7,11 @@ Simple to add "Pull to refresh" and "Load more" into your UITableView
 
 ## Usage
 * **Import UITableView+DynamicCell category to your table**
-```
+```objective-c
 #import "UITableView+DynamicCell.h"
 ```
 * **In "viewDidAppear"**
-```
+```objective-c
 -(void)viewDidAppear:(BOOL)animated{
 [super viewDidAppear:animated];
 _tableView.refreshDelegate = self;
@@ -20,7 +20,7 @@ _tableView.enabledRefresh = YES;
 }
 ```
 * **Add some methods required**
-```
+```objective-c
 -(void)scrollViewDidScroll:(UIScrollView *)scrollView{
 [_tableView scrollViewDidScroll:scrollView];
 }
@@ -55,3 +55,12 @@ completion();
 ```
 
 * **That's it!**
+
+# Contact
+
+* Skype: live:werfe
+* Mail: werfeee@gmail.com
+
+# License
+
+The MIT License (MIT)
