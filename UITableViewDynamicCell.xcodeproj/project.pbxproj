@@ -15,6 +15,12 @@
 		0FD98C041CCB621100D44C9A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0FD98C021CCB621100D44C9A /* LaunchScreen.storyboard */; };
 		0FD98C0F1CCB621100D44C9A /* UITableViewDynamicCellTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD98C0E1CCB621100D44C9A /* UITableViewDynamicCellTests.m */; };
 		0FD98C1A1CCB621100D44C9A /* UITableViewDynamicCellUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD98C191CCB621100D44C9A /* UITableViewDynamicCellUITests.m */; };
+		0FD98C321CCB63B400D44C9A /* CLIndicatorView.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD98C291CCB63B400D44C9A /* CLIndicatorView.m */; };
+		0FD98C331CCB63B400D44C9A /* CLTableFooterLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD98C2B1CCB63B400D44C9A /* CLTableFooterLoading.m */; };
+		0FD98C341CCB63B400D44C9A /* CLTableHeaderLoading.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD98C2D1CCB63B400D44C9A /* CLTableHeaderLoading.m */; };
+		0FD98C351CCB63B400D44C9A /* news_image_loading@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD98C2E1CCB63B400D44C9A /* news_image_loading@2x.png */; };
+		0FD98C361CCB63B400D44C9A /* news_image_loading@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 0FD98C2F1CCB63B400D44C9A /* news_image_loading@3x.png */; };
+		0FD98C371CCB63B400D44C9A /* UITableView+DynamicCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 0FD98C311CCB63B400D44C9A /* UITableView+DynamicCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,16 @@
 		0FD98C151CCB621100D44C9A /* UITableViewDynamicCellUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITableViewDynamicCellUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FD98C191CCB621100D44C9A /* UITableViewDynamicCellUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = UITableViewDynamicCellUITests.m; sourceTree = "<group>"; };
 		0FD98C1B1CCB621100D44C9A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0FD98C281CCB63B400D44C9A /* CLIndicatorView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLIndicatorView.h; sourceTree = "<group>"; };
+		0FD98C291CCB63B400D44C9A /* CLIndicatorView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLIndicatorView.m; sourceTree = "<group>"; };
+		0FD98C2A1CCB63B400D44C9A /* CLTableFooterLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableFooterLoading.h; sourceTree = "<group>"; };
+		0FD98C2B1CCB63B400D44C9A /* CLTableFooterLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableFooterLoading.m; sourceTree = "<group>"; };
+		0FD98C2C1CCB63B400D44C9A /* CLTableHeaderLoading.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLTableHeaderLoading.h; sourceTree = "<group>"; };
+		0FD98C2D1CCB63B400D44C9A /* CLTableHeaderLoading.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLTableHeaderLoading.m; sourceTree = "<group>"; };
+		0FD98C2E1CCB63B400D44C9A /* news_image_loading@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_image_loading@2x.png"; sourceTree = "<group>"; };
+		0FD98C2F1CCB63B400D44C9A /* news_image_loading@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "news_image_loading@3x.png"; sourceTree = "<group>"; };
+		0FD98C301CCB63B400D44C9A /* UITableView+DynamicCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UITableView+DynamicCell.h"; sourceTree = "<group>"; };
+		0FD98C311CCB63B400D44C9A /* UITableView+DynamicCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UITableView+DynamicCell.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +117,7 @@
 		0FD98BF31CCB621100D44C9A /* UITableViewDynamicCell */ = {
 			isa = PBXGroup;
 			children = (
+				0FD98C271CCB63B400D44C9A /* CLUITableView+DynamicCell */,
 				0FD98BF71CCB621100D44C9A /* AppDelegate.h */,
 				0FD98BF81CCB621100D44C9A /* AppDelegate.m */,
 				0FD98BFA1CCB621100D44C9A /* ViewController.h */,
@@ -138,6 +155,23 @@
 				0FD98C1B1CCB621100D44C9A /* Info.plist */,
 			);
 			path = UITableViewDynamicCellUITests;
+			sourceTree = "<group>";
+		};
+		0FD98C271CCB63B400D44C9A /* CLUITableView+DynamicCell */ = {
+			isa = PBXGroup;
+			children = (
+				0FD98C281CCB63B400D44C9A /* CLIndicatorView.h */,
+				0FD98C291CCB63B400D44C9A /* CLIndicatorView.m */,
+				0FD98C2A1CCB63B400D44C9A /* CLTableFooterLoading.h */,
+				0FD98C2B1CCB63B400D44C9A /* CLTableFooterLoading.m */,
+				0FD98C2C1CCB63B400D44C9A /* CLTableHeaderLoading.h */,
+				0FD98C2D1CCB63B400D44C9A /* CLTableHeaderLoading.m */,
+				0FD98C2E1CCB63B400D44C9A /* news_image_loading@2x.png */,
+				0FD98C2F1CCB63B400D44C9A /* news_image_loading@3x.png */,
+				0FD98C301CCB63B400D44C9A /* UITableView+DynamicCell.h */,
+				0FD98C311CCB63B400D44C9A /* UITableView+DynamicCell.m */,
+			);
+			path = "CLUITableView+DynamicCell";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -243,8 +277,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FD98C361CCB63B400D44C9A /* news_image_loading@3x.png in Resources */,
 				0FD98C041CCB621100D44C9A /* LaunchScreen.storyboard in Resources */,
 				0FD98C011CCB621100D44C9A /* Assets.xcassets in Resources */,
+				0FD98C351CCB63B400D44C9A /* news_image_loading@2x.png in Resources */,
 				0FD98BFF1CCB621100D44C9A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -273,6 +309,10 @@
 				0FD98BFC1CCB621100D44C9A /* ViewController.m in Sources */,
 				0FD98BF91CCB621100D44C9A /* AppDelegate.m in Sources */,
 				0FD98BF61CCB621100D44C9A /* main.m in Sources */,
+				0FD98C321CCB63B400D44C9A /* CLIndicatorView.m in Sources */,
+				0FD98C371CCB63B400D44C9A /* UITableView+DynamicCell.m in Sources */,
+				0FD98C331CCB63B400D44C9A /* CLTableFooterLoading.m in Sources */,
+				0FD98C341CCB63B400D44C9A /* CLTableHeaderLoading.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +452,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UITableViewDynamicCell/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Company.-.UITableViewDynamicCell";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -423,6 +464,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = UITableViewDynamicCell/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Company.-.UITableViewDynamicCell";
 				PRODUCT_NAME = "$(TARGET_NAME)";
