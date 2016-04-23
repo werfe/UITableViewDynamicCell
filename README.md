@@ -31,23 +31,20 @@ Simple to add "Pull to refresh" and "Load more" into your UITableView
 }
 -(void)refreshData:(UITableView *)tableView completion:(RefreshCompletion)completion{
     
-    //TODO:do some task needs many time to finish. After finish it, call completion block
+    //TODO:do some task needs many time to finish. After finish it, call the completion block
     
     //Some codes below is an example
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        
-        numberOfRows=DEFAULT_ROWS;
         [_tableView reloadData];
         completion();
     });
 }
 -(void)loadMoreData:(UITableView *)tableView completion:(RefreshCompletion)completion{
     
-    //TODO:do some task needs many time to finish. After finish it, call completion block
+    //TODO:do some task needs many time to finish. After finish it, call the completion block
     
     //Some codes below is an example
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-        numberOfRows+=5;
         [_tableView reloadData];
         completion();
     });
