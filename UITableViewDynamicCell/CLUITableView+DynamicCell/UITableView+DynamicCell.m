@@ -1,6 +1,5 @@
 //
 //  UITableView+DynamicCell.m
-//  SwitchableMultipleEnvironmentsDemo
 //
 //  Created by Vũ Trường Giang on 4/21/16.
 //  Copyright © 2016 Vũ Trường Giang. All rights reserved.

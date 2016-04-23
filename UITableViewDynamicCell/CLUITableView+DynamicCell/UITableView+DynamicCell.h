@@ -1,6 +1,5 @@
 //
 //  UITableView+DynamicCell.h
-//  SwitchableMultipleEnvironmentsDemo
 //
 //  Created by Vũ Trường Giang on 4/21/16.
 //  Copyright © 2016 Vũ Trường Giang. All rights reserved.
@@ -21,11 +20,10 @@ typedef void(^RefreshCompletion)();
 @property (strong, nonatomic) CLTableHeaderLoading *headerView;
 
 
-//@property (strong, nonatomic) STableFooterView *footerView;
 @property (nonatomic, readwrite) BOOL isLoadingMore;
 
 /*
- * set VLTableDelegate
+ * set UITableViewDynamicDelegate
  */
 @property (nonatomic, assign) id <UITableViewDynamicDelegate>   refreshDelegate;
 
