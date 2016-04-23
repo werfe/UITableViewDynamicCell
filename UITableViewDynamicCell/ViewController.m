@@ -70,7 +70,7 @@
     
     //TODO:do some task needs many time to finish. After finish it, call completion block
     
-    //Some code below is an example
+    //Some codes below is an example
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         
         numberOfRows=DEFAULT_ROWS;
@@ -82,7 +82,7 @@
     
     //TODO:do some task needs many time to finish. After finish it, call completion block
     
-    //Some code below is an example
+    //Some codes below is an example
     dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(2 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
         numberOfRows+=5;
         [_tableView reloadData];
