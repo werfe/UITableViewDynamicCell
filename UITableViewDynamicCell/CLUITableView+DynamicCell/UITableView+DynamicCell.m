@@ -18,6 +18,7 @@ static char kenableLoadMoreKey;
 static char kisLoadingKey;
 static char kisLoadingMoreKey;
 static char kHeaderViewKey;
+static char kDefaultInsetsKey;
 
 @implementation UITableView (DynamicCell)
 
@@ -30,9 +31,12 @@ static char kHeaderViewKey;
 }
 -(void)setRefreshDelegate:(id<UITableViewDynamicDelegate>)refreshDelegate{
     objc_setAssociatedObject(self, &krefreshDelegateKey, refreshDelegate, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+    
+    NSLog(@"Content inset default = %@",self.contentInset);
+    self.defaultInsets = self.contentInset;
 }
 
-
+//Get set Loading more
 -(BOOL)isLoadingMore{
     NSNumber *isLoadingMoreKeyNumber = objc_getAssociatedObject(self, &kisLoadingMoreKey);
     return [isLoadingMoreKeyNumber boolValue];
@@ -97,6 +101,21 @@ static char kHeaderViewKey;
     [self addSubview:headerView];
 }
 
+//Get Set Default Insets
+-(UIEdgeInsets)defaultInset{
+    NSValue *value = objc_getAssociatedObject(self, &kDefaultInsetsKey);
+    if(value) {
+        UIEdgeInsets edgeInsets;
+        [value getValue:&edgeInsets];
+        return edgeInsets;
+    }else {
+        return UIEdgeInsetsZero;
+    }
+}
+-(void)setDefaultInsets:(UIEdgeInsets)defaultInsets{
+    NSValue *insetsValue = [NSValue valueWithUIEdgeInsets:defaultInsets];
+    objc_setAssociatedObject(self, &kDefaultInsetsKey, insetsValue, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+}
 
 #pragma mark - Method Swizzling
 
@@ -144,6 +163,7 @@ static char kHeaderViewKey;
     }
 }
 
+
 #pragma mark - Public Method
 - (void)scrollViewDidScroll:(UIScrollView*)scrollView
 {
@@ -159,7 +179,7 @@ static char kHeaderViewKey;
     }
     
     //Refresh
-    float offset = self.headerView.frame.size.height;
+    float offset = self.headerView.frame.size.height + self.defaultInset.top;
     CGFloat topOffset = [self topContentOffset];
     if (!self.isLoading && self.enabledRefresh && topOffset > -offset && topOffset <= 0)
     {
@@ -170,7 +190,7 @@ static char kHeaderViewKey;
     }
     if (self.isLoading && topOffset > -offset && topOffset <= 0)
     {
-        [scrollView setContentInset:UIEdgeInsetsMake(self.headerView.frame.size.height, 0, 0, 0)];
+        [self setContentInset:UIEdgeInsetsMake(self.headerView.frame.size.height+self.defaultInset.top, self.defaultInset.left, self.defaultInset.bottom, self.defaultInset.right)];
     }
 }
 
@@ -199,13 +219,15 @@ static char kHeaderViewKey;
         {
             self.headerView.isAnimating = YES;
             self.isLoading = YES;
+            UIEdgeInsets inset = self.defaultInset;
             [self.refreshDelegate refreshData:self completion:^{
     
                 dispatch_async(dispatch_get_main_queue(), ^{
                     
                     [UIView animateWithDuration:0.25f animations:^{
                         //                    self.headerView.alpha = 0;
-                        [self setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
+                        [self setContentInset:inset];
+//                         [self setContentInset:UIEdgeInsetsMake(0, 0, 0, 0)];
                     } completion:^(BOOL finished) {
                         self.headerView.isAnimating = NO;
                         self.isLoading = NO;

@@ -6,6 +6,8 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "CLTableHeaderLoading.h"
+#import "CLTableFooterLoading.h"
 
 @class CLTableHeaderLoading;
 
@@ -14,18 +16,22 @@ typedef void(^RefreshCompletion)();
 
 @interface UITableView (DynamicCell)
 
-#pragma mark -
-#pragma mark Propeties
+#pragma mark - Propeties
 
+/*
+ * Store default insets
+ */
+@property (nonatomic, assign) UIEdgeInsets defaultInset;
+
+/*
+ * loading view
+ */
 @property (strong, nonatomic) CLTableHeaderLoading *headerView;
-
-
-@property (nonatomic, readwrite) BOOL isLoadingMore;
 
 /*
  * set UITableViewDynamicDelegate
  */
-@property (nonatomic, assign) id <UITableViewDynamicDelegate>   refreshDelegate;
+@property (nonatomic, assign) id <UITableViewDynamicDelegate> refreshDelegate;
 
 /*
  * if YES, when pull down, activityIndicator will show on header of table
@@ -42,10 +48,13 @@ typedef void(^RefreshCompletion)();
  */
 @property (nonatomic, readonly) BOOL  isLoading;
 
+/*
+ * readonly, check table is reloading
+ */
+@property (nonatomic, readwrite) BOOL isLoadingMore;
 
 
-#pragma mark -
-#pragma mark Public Method
+#pragma mark - Public Method
 
 /*
  * call to update content offset
@@ -65,6 +74,7 @@ typedef void(^RefreshCompletion)();
 @protocol UITableViewDynamicDelegate <NSObject>
 
 @optional
+-(void)willBeginRefreshData;
 - (void)refreshData:(UITableView*)tableView completion:(RefreshCompletion)completion;
 
 //Load more Data delegate method
