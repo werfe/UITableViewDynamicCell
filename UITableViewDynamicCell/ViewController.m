@@ -22,6 +22,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.title = @"Demo";
     // Do any additional setup after loading the view, typically from a nib.
     numberOfRows = DEFAULT_ROWS;
     _tableView.delegate = self;
