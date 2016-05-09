@@ -211,7 +211,7 @@ static char kDefaultInsetsKey;
 }
 - (void)checkToReload
 {
-    CGFloat offset = self.tableFooterView.frame.size.height + self.defaultInset.top;
+    CGFloat offset = self.headerView.frame.size.height + self.defaultInset.top;
     CGFloat topOffset = [self topContentOffset];
     if (topOffset <= -offset && self.enabledRefresh && !self.isLoading) {
         //refresh
